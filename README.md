@@ -144,7 +144,7 @@ app.get("/users", (req, res) => {
 
 ```
 
-### API REST Tools
+## API REST Tools
 
 > Rapid API Hub
 
@@ -156,8 +156,86 @@ app.get("/users", (req, res) => {
 
 [ExpressJs](https://expressjs.com/es/)
 
+```javascript
+
+const express = require(`express`);
+const app = express();
+const port = process.env.port || 3000;
+//*? === Routing ===*/
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+//*? === Listen Port ===*/
+app.listen(port, () => {
+  console.log(`Server is running in Port http://localhost:${port}...`);
+});
+
+```
+
+> NPM
+
+[npm](https://www.npmjs.com/)
+
+> NodeJs
+
+[NodeJs](https://nodejs.org/en/docs/)
+
+> Nodemon
+
+[Nodemon](https://nodemon.io/)
+
+```javascript
+
+
+// => Install Global
+npm install -g nodemon
+
+// => Install Development Dependency
+npm install --save-dev nodemon
+
+//nodemon ./server.js  ==> (localhost 8080 / 3000)
+
+
+```
+
+> Run Dev (Desarrollo)
+
+```javascript
+
+run server
+npm run => "dev": "nodemon app.js",
+
+
+```
+
+Run Production
+
+```javascript
+
+run server
+npm run =>  "start": "node app.js",
+
+
+```
+
+> Config Good Practice (Project ESlint & Prettier & Nodemon)
+
+```
+
+npm i nodemon eslint eslint-config-prettier eslint-plugin-prettier prettier -D
+
+```
+
+> GitIgnore
+
+[gitignore_io](https://www.toptal.com/developers/gitignore/)
+
+## Model Client & Server
+
 > Model Client & Server
+
 > ( HTTP,HTTPS,APi REST)
+
 > HTTP & HTTPS ( Hypertext Transfer Protocol )
 
 Protocolo de Transferencia de Hipertexto.
@@ -189,3 +267,51 @@ El servidor conoce el formato esperado del mensaje que envía el cliente. Ademá
 > Headers (Cabeceras)
 
 Proveen información adicional sobre la solicitud.
+
+> Body (Cuerpo)
+
+Contiene la información que debe ser enviada al servidor para procesar la solicitud. Formato JSON. No se incluye en todas las solicitudes (requieren enviar información como: POST y PUT).
+
+> HTTPS (Hypertext Transfer Protocol (HTTP))
+
+Le agrega una capa extra de seguridad.
+
+> Método (Method) HTTP
+
+Verbo ("verbos HTTP") o solicitud que indica la intención de la solicitud.
+
+- GET (para Solicitar un recurso específico).
+- POST (Para Crear un recurso específico. Agregar ususarios nuevos a una base de datos).
+- PUT (Para Modificar un recurso específico. Hacer un cambio en una base de datos.)
+- DELETE (Para Eliminar un recurso específico).
+
+![](https://camo.githubusercontent.com/4ad9422890b3ac7843530ecd7822fc0acf48021bc7b0674f6db5f2b4a135de62/68747470733a2f2f7374617469632e706c61747a692e636f6d2f6d656469612f757365725f75706c6f61642f524553542d36356534323430662d363632622d343036652d393163392d3537643862306464353666342e6a7067)
+
+> Respuesta (Response) HTTP / Código de Estado HTTP
+
+[MDN_HTTP_State](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
+
+[HTTP_Cat](https://http.cat/)
+
+- Código de estado (200, 404...etc).
+- Texto de Estado.
+- Texto de Estado.
+- Cabeceras (Headers).
+- Cuerpo (Body).
+
+> Números que indican si se han completado exitosamente o no, las solicitudes HTTP.
+
+- Respuestas informativas (100–199),
+- Respuestas satisfactorias (200–299),
+- Redirecciones (300–399),
+- Errores de los clientes (400–499),
+- Errores de los servidores (500–599).
+
+> Estados Más comunes:
+
+- 200 OK: La respuesta fue exitosa.
+- 400 Bad Request: El servidor no pudo interpretar la solicitud.
+- 404 Not Found: El mservidor no pudo encontrar el recurso solicitado.
+- 500 Internal Server Error: El servidor encontró una situación que no sabe cómo manejar.
+
+![](https://camo.githubusercontent.com/0294f63543e7574885567ce08f9cea150b0972e0dbfa682d5e0b07e2423b3e62/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f464452304f4d6d57514141486364573f666f726d61743d6a7067266e616d653d343039367834303936)
