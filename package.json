@@ -1,0 +1,26 @@
+{
+  "name": "consume_api-rest",
+  "version": "1.0.0",
+  "description": "consume API-REST with Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christiano0407/consume_API-REST.git"
+  },
+  "keywords": [
+    "javascript",
+    "api",
+    "APIREST",
+    "fetch",
+    "ajax"
+  ],
+  "author": "Chris04",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Christiano0407/consume_API-REST/issues"
+  },
+  "homepage": "https://github.com/Christiano0407/consume_API-REST#readme"
+}
