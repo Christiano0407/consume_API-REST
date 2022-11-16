@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "node ./server/server.js",
-    "run": "node ./apiRest/js/apiApp.js"
+    "run": "node ./apiRest/js/apiApp.js",
+    "pro": "nodemon ./server/server.js"
   },
   "repository": {
     "type": "git",
