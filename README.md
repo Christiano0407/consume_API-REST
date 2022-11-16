@@ -150,6 +150,10 @@ app.get("/users", (req, res) => {
 
 [Rapid_API](https://rapidapi.com/hub)
 
+> API Public GitHub
+
+[API_GitHub_Public](https://github.com/public-apis/public-apis)
+
 ### Model Client & Server
 
 > ExpressJs
@@ -315,3 +319,11 @@ Verbo ("verbos HTTP") o solicitud que indica la intención de la solicitud.
 - 500 Internal Server Error: El servidor encontró una situación que no sabe cómo manejar.
 
 ![](https://camo.githubusercontent.com/0294f63543e7574885567ce08f9cea150b0972e0dbfa682d5e0b07e2423b3e62/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f464452304f4d6d57514141486364573f666f726d61743d6a7067266e616d653d343039367834303936)
+
+### AUTH & CORS
+
+> AUTH (Autentication or Autenticación) & CORS (Intercambio de Recursos de Origen Cruzado)
+
+[MDN_CORS](https://developer.mozilla.org/es/docs/Web/HTTP/CORS)
+
+[AUTH_Docs](https://auth0.com/docs#introduction)
