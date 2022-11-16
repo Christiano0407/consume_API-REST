@@ -4,7 +4,8 @@
   "description": "consume API-REST with Javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node ./server/server.js",
+    "run": "node ./apiRest/js/apiApp.js"
   },
   "repository": {
     "type": "git",
