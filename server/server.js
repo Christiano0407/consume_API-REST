@@ -9,11 +9,11 @@ app.get(`/`, (req, res) => {
 });
 
 app.get(`/api/v1/cat`, (req, res) => {
-  res.send(`Hello Cat`);
+  res.send('Hello Cat');
 });
 
 //app.use(`/cats`, apiPlus);
 
 app.listen(port, () => {
-  console.log(`Server is running in port http://localhost:${port}... `);
+  console.log(`Server is running in port http://localhost:${port}.... `);
 });
