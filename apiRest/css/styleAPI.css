@@ -94,9 +94,9 @@ figure {
 /* === Section Grid === */
 .sectionGrid-img {
   width: 100%;
-  display: grid;
 }
-.section-Img .grid-image {
+.grid-image {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 1fr;
   grid-auto-flow: row;
