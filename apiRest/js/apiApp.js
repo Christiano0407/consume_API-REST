@@ -1,6 +1,7 @@
-//** === === API REST === === */
-console.log('Consume API');
+//*TODO === === === API REST === === ==< */
+const btn = document.querySelector(`#btnId`);
 
+//** === API >> */
 const URL = `https://api.thecatapi.com/v1/images/search`;
 
 const call = async (api) => {
@@ -14,4 +15,10 @@ const call = async (api) => {
   }
 };
 
-console.log(call(URL));
+//console.log(call(URL));
+
+const addCat = () => {
+  call(URL);
+};
+
+btn.addEventListener('click', addCat);

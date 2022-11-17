@@ -8,9 +8,13 @@ Introduction and Consume an API REST. Communication in Frontend and Backend.
 
 ## API REST
 
-> API REST
+> Image Create for: Juan Espinola in Course With Platzi
 
 ![](https://i.ibb.co/MSW3V2W/dark-800-2200-px-1.png)
+
+> Endpoints and Query Parameters
+
+![](https://i.imgur.com/gAYHTI0.png)
 
 ## API ( Aplication Programming Interface )
 

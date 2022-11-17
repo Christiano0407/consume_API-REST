@@ -12,7 +12,7 @@ app.get(`/api/v1/cat`, (req, res) => {
   res.send('Hello Cat');
 });
 
-//app.use(`/cats`, apiPlus);
+//app.use(`/static`, express.static(__dirname + `/apiRest`));
 
 app.listen(port, () => {
   console.log(`Server is running in port http://localhost:${port}.... `);
