@@ -6,16 +6,6 @@ Introduction and Consume an API REST. Communication in Frontend and Backend.
 
 [Platzi](https://platzi.com/home)
 
-## API REST
-
-> Image Create for: Juan Espinola in Course With Platzi
-
-![](https://i.ibb.co/MSW3V2W/dark-800-2200-px-1.png)
-
-> Endpoints and Query Parameters
-
-![](https://i.imgur.com/gAYHTI0.png)
-
 ## API ( Aplication Programming Interface )
 
 > ¿ Qué es una API ?
@@ -331,3 +321,17 @@ Verbo ("verbos HTTP") o solicitud que indica la intención de la solicitud.
 [MDN_CORS](https://developer.mozilla.org/es/docs/Web/HTTP/CORS)
 
 [AUTH_Docs](https://auth0.com/docs#introduction)
+
+#### API REST
+
+> Image Create for: Juan Espinola in Course With Platzi
+
+![](https://i.ibb.co/MSW3V2W/dark-800-2200-px-1.png)
+
+> Endpoints and Query Parameters
+
+![](https://i.imgur.com/gAYHTI0.png)
+
+> API Keys
+
+![](https://i.imgur.com/Zo66y0B.png)

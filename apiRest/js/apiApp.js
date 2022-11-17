@@ -1,10 +1,11 @@
 //*TODO === === === API REST === === ==< */
 const btn = document.querySelector(`#btnId`);
 const btnCat = document.querySelector(`#btnIdCat`);
+const imgCats = document.querySelector(`#idImgCat`);
 
 //** === API >> */
 const API_URL = `https://api.thecatapi.com/v1/images/search`;
-const URL_CAT = `https://api.thecatapi.com/v1/images/search?limit=2`;
+//const URL_CAT = `https://api.thecatapi.com/v1/images/search?limit=3`;
 
 const call = async (api) => {
   try {
@@ -25,15 +26,11 @@ btn.addEventListener('click', addCat);
 //*! Reload */
 //addCat();
 
-const callCat = async (apiUrl) => {
+/* const callCat = async (apiUrl) => {
   try {
-    //let addCat = [];
     const res = await fetch(apiUrl);
     const dataCat = await res.json();
-    //console.log(dataCat);
-    const imgCats = document.querySelectorAll(`#idImgCat`);
-    imgCats.forEach((catImg) => (catImg.src = dataCat[0].url));
-    //addCat.push(imgCats);
+    imgCats.forEach((item) => item.src == dataCat[0].url);
   } catch (err) {
     console.log('We have New Error!!');
   }
@@ -43,4 +40,4 @@ const newCat = () => {
   callCat(URL_CAT);
 };
 
-btnCat.addEventListener('click', newCat);
+btnCat.addEventListener('click', newCat); */
