@@ -2,7 +2,7 @@
 const btn = document.querySelector(`#btnId`);
 
 //** === API >> */
-const URL = `https://api.thecatapi.com/v1/images/search`;
+const API_URL = `https://api.thecatapi.com/v1/images/search`;
 
 const call = async (api) => {
   try {
@@ -14,11 +14,11 @@ const call = async (api) => {
     console.log('Have Error');
   }
 };
-
 //console.log(call(URL));
-
 const addCat = () => {
-  call(URL);
+  call(API_URL);
 };
 
 btn.addEventListener('click', addCat);
+//*! Reload */
+//addCat();

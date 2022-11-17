@@ -78,17 +78,29 @@ section {
 }
 .section-Img {
   width: 100%;
-  height: 60rem;
+  /* height: 60rem; */
   display: flex;
   justify-content: center;
 }
 
 figure {
-  width: 60rem;
-  height: 40rem;
+  width: 40rem;
+  height: 20rem;
 }
 .img {
   border-radius: 0.5rem;
+}
+
+/* === Section Grid === */
+.sectionGrid-img {
+  width: 100%;
+  display: grid;
+}
+.section-Img .grid-image {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  gap: 0.5rem;
 }
 
 /* === === BUTTON === ===  */
