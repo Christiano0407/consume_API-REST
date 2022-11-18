@@ -14,7 +14,7 @@ let saveImg = [];
 const Api_Key = `live_4xmhCeb5UYoB97eAEB2G7OzdJNtCO22ssgTDfQnRAtZE1bil9rPaUGlL4GWO0IwL`;
 const API_URL_RANDOM = `https://api.thecatapi.com/v1/images/search`;
 const API = `https://api.thecatapi.com/v1/images/search?limit=4&api=key=${Api_Key}`;
-const API_FAVORITE = `https://api.thecatapi.com/v1/favourites?sub_id?limit=2&api_key=${Api_Key}`;
+const API_FAVORITE = `https://api.thecatapi.com/v1/favourites?limit=2&api_key=${Api_Key}`;
 
 //*? === === ==> Select Random Img <== === ===  */
 const call = async (api) => {
@@ -73,7 +73,21 @@ btnCat.addEventListener('click', newCat);
 
 //*? === === ==> POST >= Save Img <== === === */
 
-const pushImage = () => {};
+const saveFavoriteCat = async () => {
+  const resp = await fetch(API_FAVORITE, {
+    method: `POST`,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({}),
+  });
+
+  return resp.json();
+};
+
+const pushImage = () => {
+  saveFavoriteCat();
+};
 
 btnSave.addEventListener('click', pushImage);
 
