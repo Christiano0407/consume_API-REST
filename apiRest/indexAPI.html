@@ -9,10 +9,12 @@
   </head>
   <body>
     <main>
+      <!-- === Select Image === -->
+      <h1 class="title">Michi Beautiful Photo</h1>
       <section class="section-title">
-        <h1 class="title">Select Your Cat:</h1>
         <div class="div-cat">
           <button id="btnId" class="btn-cat">Reload</button>
+          <button id="btnIdOneSave" class="btn-cat">Img Save</button>
         </div>
       </section>
 
@@ -22,12 +24,8 @@
             <img id="img" class="img" src="" alt="img-cat" />
           </picture>
         </figure>
-        <article class="article">
-          <img id="imgArticle" class="img-article" src="" alt="img-cat" />
-          <button id="idSave" class="save-img">Save</button>
-        </article>
       </section>
-
+      <!-- ===  GRID Section === -->
       <section class="sectionGrid-img">
         <div class="div-btnTwo">
           <button id="btnIdCat" class="btn-catTwo">Add</button>
@@ -39,9 +37,19 @@
           <img id="idImgCat" class="cat-img" src="" alt="imgNew-Cat" />
         </div>
       </section>
-      <section id="idFavourite" class="favourite-Img">
+
+      <!-- === API SAVE Image === -->
+      <section class="section-save">
         <article class="article">
-          <img id="imgArticle" class="img-article" src="" alt="img-cat" />
+          <img id="imgArticleSave" class="img-article" src="" alt="img-cat" />
+          <button id="idSave" class="save-img">Save</button>
+        </article>
+      </section>
+
+      <!-- ===  API OUT Image  === -->
+      <section id="idFavourite" class="section-favourite">
+        <article class="article">
+          <img id="imgArticleOut" class="img-article" src="" alt="img-cat" />
           <button id="idOut" class="out-img">Out</button>
         </article>
       </section>
