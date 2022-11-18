@@ -120,11 +120,22 @@ figure {
 }
 
 .section-save,
-.section-favourite {
+.section-favorite {
   flex-direction: column;
   display: flex;
   align-items: center;
   width: 100%;
+}
+
+.saveAll-img {
+  width: 100%;
+  /* min-width: 500px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  gap: 1rem;
+  padding: 0.5rem;
 }
 
 /* === === BUTTON === ===  */

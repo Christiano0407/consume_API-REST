@@ -4,7 +4,9 @@ const btnOneSave = document.querySelector(`#btnIdOneSave`);
 const btnCat = document.querySelector(`#btnIdCat`);
 const img = document.querySelector(`.img`);
 const imgCats = document.querySelectorAll(`#idImgCat`);
-const btnSave = document.querySelector(`idSave`);
+const btnSave = document.querySelector(`#idSave`);
+const imgSave = document.querySelectorAll(`#imgArticleSave`);
+const divImgAll = document.querySelector(`#idAllImg`);
 let saveImg = [];
 
 //** === === === === >=  API REST Key <= === === === === >> */
@@ -19,8 +21,14 @@ const call = async (api) => {
   try {
     const response = await fetch(api);
     const data = await response.json();
-    console.log(data);
-    img.src = data[0].url;
+
+    if (response.status === 200) {
+      img.src = data[0].url;
+    }
+
+    if (response.status !== 200) {
+      console.log('Error!!');
+    }
   } catch (err) {
     console.log('Have Error');
   }
@@ -29,7 +37,7 @@ const call = async (api) => {
 const addCat = () => {
   call(API_URL_RANDOM);
 };
-
+//*!=== === Save Img */
 const saveImages = () => {
   saveImg.push(img);
   console.log(saveImg);
@@ -45,9 +53,13 @@ const callCat = async (apiUrl) => {
   try {
     const res = await fetch(apiUrl);
     const dataCat = await res.json();
-    imgCats.forEach((catImg) => {
-      catImg.src = dataCat[1].url;
-    });
+
+    if (res.status === 200) {
+      imgCats.forEach((catImg) => {
+        catImg.src = dataCat[1].url;
+      });
+      //console.log(res.status);
+    }
   } catch (err) {
     console.log('We have New Error!!');
   }
@@ -59,6 +71,10 @@ const newCat = () => {
 
 btnCat.addEventListener('click', newCat);
 
-//*? === === ==> Save Img <== === === */
+//*? === === ==> POST >= Save Img <== === === */
+
+const pushImage = () => {};
+
+btnSave.addEventListener('click', pushImage);
 
 //*? === === ==> Out Img <== === === */
