@@ -137,6 +137,12 @@ figure {
   gap: 1rem;
   padding: 0.5rem;
 }
+.id-error {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0.5rem auto;
+}
 
 /* === === BUTTON === ===  */
 button {
