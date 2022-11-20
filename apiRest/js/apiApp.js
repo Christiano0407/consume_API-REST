@@ -5,17 +5,22 @@ const btnCat = document.querySelector(`#btnIdCat`);
 const img = document.querySelector(`.img`);
 const imgCats = document.querySelectorAll(`#idImgCat`);
 const btnSave = document.querySelector(`#idSave`);
-const imgSave = document.querySelectorAll(`#imgArticleSave`);
+const imgSave = document.querySelector(`#imgArticleSave`);
+const imgSave02 = document.querySelector(`#imgArticleSave02`);
+const imgSave03 = document.querySelector(`#imgArticleSave03`);
+const imgSave04 = document.querySelector(`#imgArticleSave04`);
+const imgSave05 = document.querySelector(`#imgArticleSave05`);
 const divImgAll = document.querySelector(`#idAllImg`);
 const idErrorText = document.querySelector(`#idError`);
 let saveImg = [];
+const sectionSave = document.querySelector(`#section-save`);
 
 //** === === === === >=  API REST Key <= === === === === >> */
 //const URL_CAT = `https://api.thecatapi.com/v1/images/search?limit=4&api_key=live_4xmhCeb5UYoB97eAEB2G7OzdJNtCO22ssgTDfQnRAtZE1bil9rPaUGlL4GWO0IwL`;
 const Api_Key = `live_4xmhCeb5UYoB97eAEB2G7OzdJNtCO22ssgTDfQnRAtZE1bil9rPaUGlL4GWO0IwL`;
 const API_URL_RANDOM = `https://api.thecatapi.com/v1/images/search`;
 const API = `https://api.thecatapi.com/v1/images/search?limit=4&api=key=${Api_Key}`;
-const API_FAVORITE = `https://api.thecatapi.com/v1/favourites?limit=4&api_key=${Api_Key}`;
+const API_FAVORITE = `https://api.thecatapi.com/v1/favourites?limit=5&api_key=${Api_Key}`;
 //const API_FAVORITE = `https://api.thecatapi.com/v1/favourites`;
 
 //*? === === ==> Select Random Img <== === ===  */
@@ -43,8 +48,8 @@ const addCat = () => {
 };
 //*!=== === Save Img */
 const saveImages = () => {
-  saveImg.push(img);
-  console.log(saveImg);
+  /* saveImg.push(img);
+  console.log(saveImg); */
 };
 
 btn.addEventListener('click', addCat);
@@ -77,13 +82,33 @@ btnCat.addEventListener('click', newCat);
 
 //*? === === ==> POST >= Save Img <== === === */
 const loadFavorite = async () => {
-  const res = await fetch(API_FAVORITE);
-  const data = await res.json();
-  console.log('Favorite');
-  console.log(data);
+  try {
+    const allRes = await fetch(API_URL_RANDOM);
+    const data = await allRes.json();
+    console.log('Favorite');
+    //saveImg.push(imgSave);
+    //console.log(saveImg);
+
+    if (allRes.status !== 200) {
+      idErrorText.innerHTML = 'Error' + allRes.status + data.message;
+    } else {
+      saveFavoriteCat(data[0].id);
+    }
+
+    if (allRes.status === 200) {
+      data.forEach(() => {
+        imgSave.src = data[0].url;
+        /* saveImg.push(imgSave); */
+        //imgSave.parentElement.setAttribute(`data`, `${data[0].id}`);
+      });
+    }
+    divImgAll.innerHTM = { imgSave };
+  } catch (error) {
+    console.log('Error' + error);
+  }
 };
 
-const saveFavoriteCat = async () => {
+const saveFavoriteCat = async (id) => {
   const resp = await fetch(API_FAVORITE, {
     method: `POST`,
     headers: {
@@ -92,11 +117,11 @@ const saveFavoriteCat = async () => {
         'live_4xmhCeb5UYoB97eAEB2G7OzdJNtCO22ssgTDfQnRAtZE1bil9rPaUGlL4GWO0Iw', */
     },
     body: JSON.stringify({
-      image_id: `bi0`,
+      image_id: id,
     }),
   });
 
-  console.log('resp');
+  console.log('resp All POST Img');
   console.log(resp);
   const data = await resp.json();
 
@@ -107,7 +132,6 @@ const saveFavoriteCat = async () => {
 
 const pushImage = () => {
   loadFavorite();
-  saveFavoriteCat();
 };
 
 btnSave.addEventListener('click', pushImage);
