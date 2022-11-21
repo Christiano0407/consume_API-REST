@@ -126,6 +126,22 @@ figure {
   align-items: center;
   width: 100%;
 }
+.section-favorite {
+  flex-direction: column;
+}
+
+.outText {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outText, .outTexts {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 700;
+}
 
 .saveAll-img {
   width: 100%;

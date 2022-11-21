@@ -6,14 +6,16 @@ const img = document.querySelector(`.img`);
 const imgCats = document.querySelectorAll(`#idImgCat`);
 const btnSave = document.querySelector(`#idSave`);
 const imgSave = document.querySelector(`#imgArticleSave`);
-const imgSave02 = document.querySelector(`#imgArticleSave02`);
+/* const imgSave02 = document.querySelector(`#imgArticleSave02`);
 const imgSave03 = document.querySelector(`#imgArticleSave03`);
 const imgSave04 = document.querySelector(`#imgArticleSave04`);
-const imgSave05 = document.querySelector(`#imgArticleSave05`);
+const imgSave05 = document.querySelector(`#imgArticleSave05`); */
 const divImgAll = document.querySelector(`#idAllImg`);
 const idErrorText = document.querySelector(`#idError`);
 let saveImg = [];
 const sectionSave = document.querySelector(`#section-save`);
+const btnDelete = document.querySelector(`#idOut`);
+const idOutText = document.querySelector(`#idOutText`);
 
 //** === === === === >=  API REST Key <= === === === === >> */
 //const URL_CAT = `https://api.thecatapi.com/v1/images/search?limit=4&api_key=live_4xmhCeb5UYoB97eAEB2G7OzdJNtCO22ssgTDfQnRAtZE1bil9rPaUGlL4GWO0IwL`;
@@ -21,7 +23,8 @@ const Api_Key = `live_4xmhCeb5UYoB97eAEB2G7OzdJNtCO22ssgTDfQnRAtZE1bil9rPaUGlL4G
 const API_URL_RANDOM = `https://api.thecatapi.com/v1/images/search`;
 const API = `https://api.thecatapi.com/v1/images/search?limit=4&api=key=${Api_Key}`;
 const API_FAVORITE = `https://api.thecatapi.com/v1/favourites?limit=5&api_key=${Api_Key}`;
-//const API_FAVORITE = `https://api.thecatapi.com/v1/favourites`;
+const API_FAVORITE_DELETE = (id) =>
+  `https://api.thecatapi.com/v1/favourites/${id}?api_key=${Api_Key}`;
 
 //*? === === ==> Select Random Img <== === ===  */
 const call = async (api) => {
@@ -56,9 +59,9 @@ btn.addEventListener('click', addCat);
 btnOneSave.addEventListener('click', saveImages);
 
 //** Reload */
-//addCat();
-//*? === === ==> GRID Select Img <== === ===  */
-const callCat = async (apiUrl) => {
+addCat();
+//*! === === ==> GRID Select Img <== === ===  */
+/* const callCat = async (apiUrl) => {
   try {
     const res = await fetch(apiUrl);
     const dataCat = await res.json();
@@ -72,13 +75,13 @@ const callCat = async (apiUrl) => {
   } catch (err) {
     console.log('We have New Error!!');
   }
-};
+}; */
 
-const newCat = () => {
+/* const newCat = () => {
   callCat(API);
-};
+}; */
 
-btnCat.addEventListener('click', newCat);
+//btnCat.addEventListener('click', newCat);
 
 //*? === === ==> POST >= Save Img <== === === */
 const loadFavorite = async () => {
@@ -121,8 +124,6 @@ const saveFavoriteCat = async (id) => {
     }),
   });
 
-  console.log('resp All POST Img');
-  console.log(resp);
   const data = await resp.json();
 
   if (resp.status !== 200) {
@@ -136,4 +137,22 @@ const pushImage = () => {
 
 btnSave.addEventListener('click', pushImage);
 
-//*? === === ==> Out Img <== === === */
+//*? === === ==> DELETE <==> Out Img <== === === */
+const deleteFavoriteCat = async (id) => {
+  const res = await fetch(API_FAVORITE_DELETE(id), {
+    method: 'DELETE',
+  });
+  const data = res.json();
+  console.log(data);
+
+  if (res.status !== 200) {
+    idOutText.innerHTML =
+      'Delete! You Have a New Error & Delete!' + res.status + data.message;
+  }
+};
+
+function deleteImg() {
+  deleteFavoriteCat();
+}
+
+btnDelete.addEventListener('click', deleteImg);
