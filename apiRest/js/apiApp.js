@@ -16,6 +16,7 @@ let saveImg = [];
 const sectionSave = document.querySelector(`#section-save`);
 const btnDelete = document.querySelector(`#idOut`);
 const idOutText = document.querySelector(`#idOutText`);
+const idSaveSection = document.querySelector(`#idSave`);
 
 //** === === === === >=  API REST Key <= === === === === >> */
 //const URL_CAT = `https://api.thecatapi.com/v1/images/search?limit=4&api_key=live_4xmhCeb5UYoB97eAEB2G7OzdJNtCO22ssgTDfQnRAtZE1bil9rPaUGlL4GWO0IwL`;
@@ -89,23 +90,20 @@ const loadFavorite = async () => {
     const allRes = await fetch(API_URL_RANDOM);
     const data = await allRes.json();
     console.log('Favorite');
-    //saveImg.push(imgSave);
-    //console.log(saveImg);
 
     if (allRes.status !== 200) {
       idErrorText.innerHTML = 'Error' + allRes.status + data.message;
     } else {
-      saveFavoriteCat(data[0].id);
-    }
-
-    if (allRes.status === 200) {
-      data.forEach(() => {
+      //idSaveSection.innerHTML = '';
+      data.map(() => {
         imgSave.src = data[0].url;
+        saveFavoriteCat(data[0].id);
         /* saveImg.push(imgSave); */
         //imgSave.parentElement.setAttribute(`data`, `${data[0].id}`);
+        //btn.onClick = () => deleteFavoriteCat(data.id);
       });
     }
-    divImgAll.innerHTM = { imgSave };
+    divImgAll.innerHTM = imgSave;
   } catch (error) {
     console.log('Error' + error);
   }
@@ -142,17 +140,18 @@ const deleteFavoriteCat = async (id) => {
   const res = await fetch(API_FAVORITE_DELETE(id), {
     method: 'DELETE',
   });
-  const data = res.json();
+  const data = await res.json();
   console.log(data);
 
   if (res.status !== 200) {
     idOutText.innerHTML =
       'Delete! You Have a New Error & Delete!' + res.status + data.message;
+  } else {
   }
 };
-
+//*! === ADD Delete */
 function deleteImg() {
   deleteFavoriteCat();
 }
 
-btnDelete.addEventListener('click', deleteImg);
+btnDelete.addEventListener('click', deleteImg());

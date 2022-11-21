@@ -39,7 +39,7 @@
       </section> -->
 
       <!-- === API SAVE Image === -->
-      <section class="section-save">
+      <section id="idSave" class="section-save">
         <span id="idError" class="id-error"></span>
         <div id="idAllImg" class="saveAll-img">
           <img id="imgArticleSave" class="img-article" src="" alt="img-cat" />
@@ -60,7 +60,9 @@
         </div>
         <article class="article">
           <img id="imgArticleOut" class="img-article" src="" alt="img-cat" />
-          <button id="idOut" class="out-img">Delete</button>
+          <button id="idOut" onclick="deleteFavoriteCat()" class="out-img">
+            Delete
+          </button>
         </article>
       </section>
     </main>
