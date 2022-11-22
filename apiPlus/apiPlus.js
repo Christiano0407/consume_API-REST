@@ -1,10 +1,12 @@
 //**TODO >>> === === API REST === === Exercise === === <<< */
 //fetch('https://rawg-video-games-database.p.rapidapi.com/games', options);
-const API_KEY = 'https://rawg-video-games-database.p.rapidapi.com/games';
-const API_PO = `https://pokeapi.co/api/v2/pokemon/ditto`;
+//const API_KEY = 'https://rawg-video-games-database.p.rapidapi.com/games';
+//const API_PO = `https://pokeapi.co/api/v2/pokemon/ditto`;
 const API_Rick = `https://rickandmortyapi.com/api/character/2`;
-const img = document.getElementById(`#idImg`);
-
+const API = `https://rickandmortyapi.com/api/character/?page=1&limit=10`;
+const img = document.getElementById(`idImg`);
+const img2 = document.getElementById(`idImg2`);
+const imgGrid = document.getElementById(`idGridIm`);
 /* const options = {
   method: 'GET',
   headers: {
@@ -46,15 +48,26 @@ const apiPlus = async () => {
       //body: JSON.stringify(img),
     });
 
+    let allImg = [];
     const data = await response.json();
+    console.log(data);
     console.log(data.id);
     console.log(data.name);
     console.log(data.url);
-    console.log(data.status);
-    console.log(data.origin.name);
-    console.log(data.location.name);
-    console.log(data.image);
-    console.log(data.created);
+
+    allImg.push(data);
+    //console.log(allImg);
+
+    const imgAll = () => {
+      allImg.forEach((images) => {
+        img.src = images.image;
+        img2.src = images.image;
+      });
+    };
+
+    if (response.status === 200) {
+      imgAll();
+    }
 
     if (response.status !== 200) {
       console.log(`We have Error! ${response.status}`);
@@ -64,4 +77,9 @@ const apiPlus = async () => {
   }
 };
 
+//** === === API 03 === === */
+const apiGridPlus = async () => {};
+
+//*! === === ==> Call API <== === === */
 apiPlus();
+apiGridPlus();
