@@ -2,11 +2,19 @@
 //fetch('https://rawg-video-games-database.p.rapidapi.com/games', options);
 //const API_KEY = 'https://rawg-video-games-database.p.rapidapi.com/games';
 //const API_PO = `https://pokeapi.co/api/v2/pokemon/ditto`;
-const API_Rick = `https://rickandmortyapi.com/api/character/2`;
-const API = `https://rickandmortyapi.com/api/character/?page=1&limit=10`;
 const img = document.getElementById(`idImg`);
 const img2 = document.getElementById(`idImg2`);
-const imgGrid = document.getElementById(`idGridIm`);
+const imgGrid = document.getElementById(`idGridImg`);
+const imgGrid2 = document.getElementById(`idGridImg2`);
+const imgGrid3 = document.getElementById(`idGridImg3`);
+const imgGrid4 = document.getElementById(`idGridImg4`);
+const imgGrid5 = document.getElementById(`idGridImg5`);
+const imgGrid6 = document.getElementById(`idGridImg6`);
+const sectionAdd = document.querySelector(`#idCharacter`);
+let imgAccess = [];
+//*? >>> === === API REST === === <<< */
+const API_Rick = `https://rickandmortyapi.com/api/character/10`;
+const API = `https://rickandmortyapi.com/api/character/?page=1&limit=15`;
 /* const options = {
   method: 'GET',
   headers: {
@@ -50,7 +58,6 @@ const apiPlus = async () => {
 
     let allImg = [];
     const data = await response.json();
-    console.log(data);
     console.log(data.id);
     console.log(data.name);
     console.log(data.url);
@@ -78,8 +85,76 @@ const apiPlus = async () => {
 };
 
 //** === === API 03 === === */
-const apiGridPlus = async () => {};
+const apiGridPlus = async (api) => {
+  try {
+    const res = await fetch(api, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const access = await res.json();
+    console.log(access);
+    console.log(access.results[0].name);
+
+    imgAccess.push(access);
+
+    const accessImg = () => {
+      imgAccess.map((character) => {
+        imgGrid.src = character.results[0].image;
+        imgGrid2.src = character.results[1].image;
+        imgGrid3.src = character.results[2].image;
+        imgGrid4.src = character.results[3].image;
+        imgGrid5.src = character.results[4].image;
+        imgGrid6.src = character.results[5].image;
+      });
+    };
+
+    if (res.status === 200) {
+      accessImg();
+    }
+
+    if (res.status !== 200) {
+      console.log('All ERROR!');
+    }
+  } catch (err) {
+    console.log(`New Error!!`, err);
+  }
+};
+
+//** <<<<< === === API 04 === === >>>>> */
+const apiNew = async (api) => {
+  try {
+    const response = await fetch(api);
+
+    if (response.status === 200) {
+      const data = await response.json();
+      //console.log(data.results);
+
+      let addCharacters = ``;
+
+      /* data.results.forEach((character) => {
+        addCharacters += `
+       <div class="add-character">
+						<img class="poster" src="${character.results[0].image}">
+						<h3 class="title">${character.results.name}</h3>
+			</div>
+       `;
+      }); */
+    }
+
+    if (response.status === 404) {
+      console.log('New Status 404!! Error');
+    }
+
+    sectionAdd.innerHTML = addCharacters;
+  } catch (error) {
+    console.log('NeW Error!! New Error!', error);
+  }
+};
 
 //*! === === ==> Call API <== === === */
 apiPlus();
-apiGridPlus();
+apiGridPlus(API);
+apiNew(API);
