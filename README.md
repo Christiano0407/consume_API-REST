@@ -409,28 +409,28 @@ save();
 
 > Request.cache
 
-[](https://developer.mozilla.org/en-US/docs/Web/API/Request/cache)
+[Request.cache](https://developer.mozilla.org/en-US/docs/Web/API/Request/cache)
 
 > Fetch()-Web APIs
 
-[](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
+[Fetch()-Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
 
 > Request-Web APIs
 
-[](https://developer.mozilla.org/en-US/docs/Web/API/Request)
+[Request-Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Request)
 
 > HTTP caching
 
-[](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#freshness)
+[HTTP caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#freshness)
 
 > Headers-Web APIs
 
-[](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+[Headers-Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
 
 > HTTP caching
 
-[](https://developer.mozilla.org/es/docs/Web/HTTP/Caching#actualizaci%C3%B3n)
+[HTTP caching](https://developer.mozilla.org/es/docs/Web/HTTP/Caching#actualizaci%C3%B3n)
 
 > Response-Web APIs
 
-[](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+[Response-Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Response)
