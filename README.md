@@ -336,6 +336,14 @@ Verbo ("verbos HTTP") o solicitud que indica la intención de la solicitud.
 
 ![](https://i.imgur.com/Zo66y0B.png)
 
+### Headers API REST
+
 > Header Content-Type
 
 [Common MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)
+
+> FormData
+
+[FormData](https://developer.mozilla.org/es/docs/Web/API/FormData)
+
+[FormData-Fetch](https://muffinman.io/blog/uploading-files-using-fetch-multipart-form-data/)

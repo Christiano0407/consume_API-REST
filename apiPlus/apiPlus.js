@@ -11,7 +11,9 @@ const imgGrid4 = document.getElementById(`idGridImg4`);
 const imgGrid5 = document.getElementById(`idGridImg5`);
 const imgGrid6 = document.getElementById(`idGridImg6`);
 const sectionAdd = document.querySelector(`#idCharacter`);
-//**// === >>> Buttons <<<< === */
+//** === Formulary === */
+const btnForm = document.getElementById(`btnUp`);
+//** === >>> Buttons <<<< === */
 let pagination = 1;
 const btnBefore = document.getElementById(`btnBefore`);
 const btnAfter = document.getElementById(`btnAfter`);
@@ -196,3 +198,12 @@ const apiNew = async (api) => {
 apiPlus();
 apiGridPlus(API_EXTRA);
 apiNew(API);
+
+//*? === Formulary === */
+const formUp = async () => {
+  const formulary = document.getElementById(`upLoadingForm`);
+  const formData = new FormData(formulary);
+  console.log(formData.get('file'));
+};
+
+btnForm.addEventListener(`click`, formUp);
