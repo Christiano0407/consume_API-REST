@@ -156,7 +156,16 @@ const apiGridPlus = async (api) => {
 //*? <<<<< === === API 04 === === >>>>> */
 const apiNew = async (api) => {
   try {
-    const response = await fetch(api);
+    //const response = await fetch(api);
+    const response = await fetch(api, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        // `x-api-key`:API_KEY,
+        //mode: 'no-cors',
+        //body: JSON.stringify({}),
+      },
+    });
 
     if (response.status === 200) {
       const data = await response.json();

@@ -335,3 +335,7 @@ Verbo ("verbos HTTP") o solicitud que indica la intención de la solicitud.
 > API Keys
 
 ![](https://i.imgur.com/Zo66y0B.png)
+
+> Header Content-Type
+
+[Common MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)
