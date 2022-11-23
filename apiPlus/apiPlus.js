@@ -14,7 +14,8 @@ const sectionAdd = document.querySelector(`#idCharacter`);
 let imgAccess = [];
 //*? >>> === === API REST === === <<< */
 const API_Rick = `https://rickandmortyapi.com/api/character/10`;
-const API = `https://rickandmortyapi.com/api/character/?page=1&limit=15`;
+const API_EXTRA = `https://rickandmortyapi.com/api/character/?page=1&limit=5`;
+const API = `https://rickandmortyapi.com/api/character/?page=3&limit=15`;
 /* const options = {
   method: 'GET',
   headers: {
@@ -134,21 +135,21 @@ const apiNew = async (api) => {
 
       let addCharacters = ``;
 
-      /* data.results.forEach((character) => {
+      data.results.forEach((character) => {
         addCharacters += `
        <div class="add-character">
-						<img class="poster" src="${character.results[0].image}">
-						<h3 class="title">${character.results.name}</h3>
+						<img class="poster" src="${character.image}">
+						<h3 class="title">${character.name}</h3>
 			</div>
        `;
-      }); */
+      });
+
+      sectionAdd.innerHTML = addCharacters;
     }
 
     if (response.status === 404) {
       console.log('New Status 404!! Error');
     }
-
-    sectionAdd.innerHTML = addCharacters;
   } catch (error) {
     console.log('NeW Error!! New Error!', error);
   }
@@ -156,5 +157,5 @@ const apiNew = async (api) => {
 
 //*! === === ==> Call API <== === === */
 apiPlus();
-apiGridPlus(API);
+apiGridPlus(API_EXTRA);
 apiNew(API);

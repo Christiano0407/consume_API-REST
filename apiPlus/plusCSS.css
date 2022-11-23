@@ -77,7 +77,7 @@ main {
 }
 .plus-div,
 .plus-GridDiv,
-.addCharacter {
+.plus-character {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-template-rows: 1fr;
@@ -85,4 +85,13 @@ main {
   grid-auto-rows: 1fr;
   gap: 1rem;
   padding: 0.5rem;
+}
+.add-character {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.add-character .poster {
+  padding: 0.5rem;
+  border-radius: 2rem;
 }
