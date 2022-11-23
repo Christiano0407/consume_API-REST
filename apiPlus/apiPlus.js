@@ -199,11 +199,23 @@ apiPlus();
 apiGridPlus(API_EXTRA);
 apiNew(API);
 
-//*? === Formulary === */
+//*? === Formulary === POST  */
 const formUp = async () => {
   const formulary = document.getElementById(`upLoadingForm`);
   const formData = new FormData(formulary);
   console.log(formData.get('file'));
+
+  /* const res = await fetch(API, {
+   
+    method: `POST`, 
+    headers: {
+      `Content-Type`: `multipart/form-data`, 
+      `X-API-KEY`: `api_key`,
+    }
+    body: formData,
+  });
+  const data = res.json();
+  */
 };
 
 btnForm.addEventListener(`click`, formUp);

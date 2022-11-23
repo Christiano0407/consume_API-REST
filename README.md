@@ -347,3 +347,47 @@ Verbo ("verbos HTTP") o solicitud que indica la intención de la solicitud.
 [FormData](https://developer.mozilla.org/es/docs/Web/API/FormData)
 
 [FormData-Fetch](https://muffinman.io/blog/uploading-files-using-fetch-multipart-form-data/)
+
+#### AXIOS (Librerías para consumir APIs)
+
+> Cliente HTTP basado en Promesas para el navegador y node.js
+
+[AXIOS](https://axios-http.com/es/)
+
+```javascript
+// NPM 
+npm install axios
+
+// CDN JS
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+```
+
+```javascript
+// Axios Config
+axios(config)
+
+// Enviar una petición POST
+axios({
+  method: 'post',
+  url: '/user/12345',
+  data: {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }
+});
+
+// Petición GET para una imagen remota en node.js
+axios({
+  method: 'get',
+  url: 'http://bit.ly/2mTM3nY',
+  responseType: 'stream'
+})
+  .then(function (response) {
+    response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+  });
+
+// Enviar petición GET (método por defecto)
+axios('/user/12345');
+
+```
