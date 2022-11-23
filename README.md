@@ -378,11 +378,13 @@ axios({
 });
 
 // Petición GET para una imagen remota en node.js
-axios({
+const api = axios.create({
   method: 'get',
-  url: 'http://bit.ly/2mTM3nY',
+  api_url: 'http://bit.ly/2mTM3nY',
   responseType: 'stream'
-})
+});
+api.default.headers.common[`X-API-KEY`] = API_KEY;
+
   .then(function (response) {
     response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
   });
@@ -390,4 +392,45 @@ axios({
 // Enviar petición GET (método por defecto)
 axios('/user/12345');
 
+//
+async function save() {
+  const response = await api.post(`/endpoint`, {
+   image_id: id;
+  });
+}
+save(); 
+
+// ==> Ya no es necesario poner res.json(); >> Ya lo trae.
+// ==> Ya trae data e status >> Ya no es necesario poner  (res.status === 200)
+
 ```
+
+#### CORS, caché, redirect y tu propio clon de fetch
+
+> Request.cache
+
+[](https://developer.mozilla.org/en-US/docs/Web/API/Request/cache)
+
+> Fetch()-Web APIs
+
+[](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
+
+> Request-Web APIs
+
+[](https://developer.mozilla.org/en-US/docs/Web/API/Request)
+
+> HTTP caching
+
+[](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#freshness)
+
+> Headers-Web APIs
+
+[](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+
+> HTTP caching
+
+[](https://developer.mozilla.org/es/docs/Web/HTTP/Caching#actualizaci%C3%B3n)
+
+> Response-Web APIs
+
+[](https://developer.mozilla.org/en-US/docs/Web/API/Response)
