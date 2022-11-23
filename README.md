@@ -405,7 +405,28 @@ save();
 
 ```
 
-#### CORS, caché, redirect y tu propio clon de fetch
+#### CORS, caché, redirect y tu propio clon de
+
+> Mode
+
+- CORS
+- NO-CORS
+- same-origin
+
+> Caché
+
+- Default
+- no-store
+- reload
+- no-cache
+- force-cache
+- only-if-cached
+
+> Redirect
+
+- Follow
+- error
+- manual
 
 > Request.cache
 
@@ -434,3 +455,25 @@ save();
 > Response-Web APIs
 
 [Response-Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+
+#### GraphQL, Web Sockets y Web 3.0: el mundo más allá de REST
+
+> Qué es GraphQL
+
+[Qué es GraphQL](https://platzi.com/blog/introduccion-a-graphql/)
+
+> ¿REST o GraphQL?, he ahí el dilema
+
+[¿REST o GraphQL](https://platzi.com/blog/rest-o-graphql/)
+
+> WebSockets en NodeJS
+
+[WebSockets en NodeJS](https://platzi.com/blog/websockets-en-nodejs/)
+
+> El rey ha muerto, larga vida a GraphQL
+
+[El rey ha muerto, larga vida a GraphQL](https://platzi.com/blog/el-rey-ha-muerto-larga-vida-a-graphql/)
+
+> Web 3.0: ¿por qué está transformando internet?
+
+[Web 3.0: ¿por qué está transformando internet?](https://platzi.com/blog/web3/)
