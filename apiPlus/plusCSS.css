@@ -95,3 +95,30 @@ main {
   padding: 0.5rem;
   border-radius: 2rem;
 }
+
+.btn-character {
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* === Buttons === */
+button {
+  padding: 1.5rem 3rem;
+  background-color: hsl(0deg 0% 20%);
+  color: hsl(180deg 4% 95%);
+  font-size: 1.6rem;
+  font-weight: 700;
+  outline: none;
+  border-radius: 1rem;
+}
+button:hover {
+  background-color: #fff;
+  color: #000;
+}
+button:active {
+  transform: scale(0.9);
+}

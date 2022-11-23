@@ -11,11 +11,40 @@ const imgGrid4 = document.getElementById(`idGridImg4`);
 const imgGrid5 = document.getElementById(`idGridImg5`);
 const imgGrid6 = document.getElementById(`idGridImg6`);
 const sectionAdd = document.querySelector(`#idCharacter`);
+//**// === >>> Buttons <<<< === */
+let pagination = 1;
+const btnBefore = document.getElementById(`btnBefore`);
+const btnAfter = document.getElementById(`btnAfter`);
+
 let imgAccess = [];
-//*? >>> === === API REST === === <<< */
+//*+ === >>> === === API REST === === <<< === */
 const API_Rick = `https://rickandmortyapi.com/api/character/10`;
 const API_EXTRA = `https://rickandmortyapi.com/api/character/?page=1&limit=5`;
 const API = `https://rickandmortyapi.com/api/character/?page=3&limit=15`;
+//const API = `https://rickandmortyapi.com/api/character`;
+
+//*? ==> === === >= Buttons <= === === <== */
+const beforeMove = () => {
+  console.log('Before');
+  if (pagination > 1) {
+    pagination -= 1;
+    apiNew(API);
+  }
+};
+
+btnBefore.addEventListener('click', beforeMove);
+
+const afterMove = () => {
+  console.log('After');
+  if (pagination < 1000) {
+    pagination += 1;
+    apiNew(API);
+  }
+};
+
+btnAfter.addEventListener(`click`, afterMove);
+
+//*? === API 01 === */
 /* const options = {
   method: 'GET',
   headers: {
@@ -42,7 +71,7 @@ fetch('https://rawg-video-games-database.p.rapidapi.com/games', options)
 };
 apiGames(API_PO); */
 
-//** === API 02 */
+//*? === API 02 */
 const apiPlus = async () => {
   try {
     //const obj = { apiName: 'Rick & Morty' };
@@ -85,7 +114,7 @@ const apiPlus = async () => {
   }
 };
 
-//** === === API 03 === === */
+//*? === === API 03 === === */
 const apiGridPlus = async (api) => {
   try {
     const res = await fetch(api, {
@@ -124,7 +153,7 @@ const apiGridPlus = async (api) => {
   }
 };
 
-//** <<<<< === === API 04 === === >>>>> */
+//*? <<<<< === === API 04 === === >>>>> */
 const apiNew = async (api) => {
   try {
     const response = await fetch(api);
@@ -146,7 +175,6 @@ const apiNew = async (api) => {
 
       sectionAdd.innerHTML = addCharacters;
     }
-
     if (response.status === 404) {
       console.log('New Status 404!! Error');
     }
