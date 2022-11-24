@@ -477,3 +477,14 @@ save();
 > Web 3.0: ¿por qué está transformando internet?
 
 [Web 3.0: ¿por qué está transformando internet?](https://platzi.com/blog/web3/)
+
+> SendBeacon
+
+[SendBeacon-WebApis](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
+
+- No espera una respuesta del servidor
+- Es buena idea para analytics
+
+> Apollo
+
+[Apollo_Docs](https://www.apollographql.com/docs/)
